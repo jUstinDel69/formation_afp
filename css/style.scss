@@ -1,18 +1,39 @@
-@import './variables';
-@import './header';
-@import './formations';
-@import './activites';
-@import './formulaire';
-@import './footer';
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+
+@import "./variables";
+@import "./header";
+@import "./formations";
+@import "./activites";
+@import "./formulaire";
+@import "./footer";
 
 
-h2.bleu {
-    color: #0041AA;
-    font-weight: bold;
+
+@media (min-width: 720px) {
+    .display-mobil {
+        display: none;
+    }
 }
 
-h2.bleu+hr {
-    border: 2px solid #0041AA;
+.flex {
+    @media (min-width: 720px) {
+        display: flex;
+    }
+}
+.flex-m {
+    display: flex;
+}
+
+h2.bleu {
+    color: #0041aa;
+    font-weight: bold;
+    text-align: center !important;
+    margin-top: 1em;
+}
+
+h2.bleu + hr {
+    border: 2px solid #0041aa;
     opacity: 1;
     width: 10%;
     margin: 2em auto;
@@ -21,11 +42,86 @@ h2.bleu+hr {
 h2.rouge {
     color: $rouge;
     font-weight: bold;
+    text-align: center;
+    margin-top: 1em;
 }
 
-h2.rouge+hr {
+h2.rouge + hr {
     border: 2px solid $rouge;
     opacity: 1;
     width: 10%;
-    margin: 2em auto;
+    margin: 2em auto; 
+}
+
+.rouge-activite{
+margin: 0.5em !important;
+}
+
+.align-start {
+    align-items: start !important;
+}
+
+
+@media (min-width: 750px) {
+    .flex {
+        display: flex;
+        align-items: center;
+    }
+    .justify-start {
+        justify-content: start;
+    }
+}
+@media (max-width: 720px) {
+    .w-m-90 {
+        width: 100% !important;
+    }
+    .texte-activite {
+        margin-left: 0;
+    }
+}
+// .flex {
+//     justify-content: space-around !important;
+// }
+//FLEX-BASIS
+@for $i from 1 through 20 {
+    .fb-#{$i * 5} {
+        flex-basis: $i * 5%;
+    }
+}
+
+// .flex-m {
+//     .fb-20 {
+//         flex-basis: 20%;
+//     }
+//     .fb-70 {
+//         flex-basis: 70%;
+//     }
+//     .fb-50 {
+//         flex-basis: 50%;
+//     }
+//     .fb-60 {
+//         flex-basis: 60%;
+//     }
+// }
+ul {
+    list-style: none;
+}
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+}
+.justify-right {
+    justify-content: right;
+}
+
+.text-center {
+    text-align: center;
 }

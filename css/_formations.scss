@@ -1,14 +1,17 @@
 /* Nos formation */
 
 .formation_container_image {
-    transition: all 0.7s;
-    max-height: 25em;
-    width: 70%;
+    transition: all 0.3s;
+    // max-height: 25em;
     position: relative;
+    overflow: hidden;
+
+    max-width: 100%;
 
     img {
         width: 100%;
         object-fit: cover;
+        object-position: center;
         border-radius: 20px;
     }
     .formation_container_image__text {
@@ -23,8 +26,8 @@
     }
     .formation_container_image__text h3 {
         font-size: 3.4em;
-    
-        font-family: 'Montserrat', sans-serif;
+
+        font-family: "Montserrat", sans-serif;
         font-weight: 700;
     }
     .formation_container_image__text ul {
@@ -32,7 +35,6 @@
         font-size: 1.1em;
     }
 }
-
 
 section.bleu {
     background-color: $main_color;
@@ -45,28 +47,25 @@ section.bleu {
     margin: auto;
     transition: all 4s;
     max-height: 0em;
-    overflow: hidden;
+    overflow: clip;
 
     table tr {
         border-bottom: 2px solid rgb(45, 77, 182);
     }
-    
+
     table {
         width: 100%;
     }
-    
+
     table td {
         padding: 1em;
     }
 }
 
-
-
-
 h3.ombre {
     color: $main_color;
     font-weight: bold;
-    text-shadow: 0px 4px 2px #CB1E1E;
+    text-shadow: 0px 4px 2px #cb1e1e;
     margin: 2em 0em;
 }
 .accordion-button {
@@ -108,7 +107,7 @@ h3.ombre {
     opacity: 1;
 }
 
-a:visited {
+.formation a:visited {
     color: white !important;
 }
 
@@ -117,14 +116,26 @@ a:visited {
 }
 
 .scroll-formation {
-    overflow: scroll;
-    display: flex;
     scrollbar-width: thin;
-}
 
-.scroll-formation .formation_container_image {
-    margin: 2em;
-    cursor: pointer;
+    @media (max-width: 720px) {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: 32em;
+        // .formation_container_image {
+        //     margin: 2em 3em;
+        //     cursor: pointer;
+        // }
+    }
+    @media (min-width: 720px) {
+        height: 25em;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    // .formation_container_image {
+    //     margin: 2em 3em;
+    //     cursor: pointer;
+    // }
 }
 
 .miniature_formation {
@@ -136,18 +147,11 @@ a:visited {
     }
 }
 
-.formation_container_image:hover {
-    transform: scale(1.05);
-}
-
-.miniature_grande {
-    width: 60% !important;
-}
-
 .anim_open_infos_formation {
     opacity: 1;
-    max-height: 60em;
-    display: block;
+    max-height: 40em;
+    overflow-y: auto;
+    scrollbar-width: thin;
 }
 
 .anim_close_infos_formation {
@@ -156,11 +160,9 @@ a:visited {
     display: none;
 }
 
-
-
 span.close {
     font-size: 4em;
-    text-shadow: 0px 4px 2px #CB1E1E;
+    text-shadow: 0px 4px 2px #cb1e1e;
 }
 
 div.close {
@@ -174,39 +176,54 @@ div.close {
 }
 
 .accordion-button:not(.collapsed)::after {
-    background-image: url('/assets/img/arrow.png') !important;
+    background-image: url("/assets/img/arrow.png") !important;
     transform: rotate(-90deg);
 }
 
 .accordion-button.collapsed::after {
-    background-image: url('/assets/img/arrow.png') !important;
+    background-image: url("/assets/img/arrow.png") !important;
     transform: rotate(90deg);
 }
-
-
-
-
-
 
 @media (max-width: 750px) {
     .formation {
         width: 100%;
     }
-    
+
     section.bleu {
         padding: 0;
     }
-    
+
     .formation_container_image {
-        margin: 0;
+        margin: 1em;
     }
-    
+
     .formation_container_image h3 {
         font-size: 1rem !important;
     }
-    
+
     .formation_container_image .date {
-        display: none !important;
+        // display: none !important;
+    }
+}
+@media (min-width: 750px) {
+    .formation_container_image {
+        margin: 1em;
+        border-radius: 20px;
+        cursor: pointer;
+
+        min-width: 30em !important;
+    }
+    .miniature_formation {
+        &:hover {
+            transform: translate(-0.7em, -0.7em);
+            box-shadow: 10px 10px 0 black;
+        }
+    }
+    .miniature_grande {
+        min-width: 60% !important;
+        max-height: 100%;
+        overflow: hidden;
     }
 }
 

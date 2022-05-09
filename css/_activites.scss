@@ -5,8 +5,11 @@
     margin: auto;
     text-align: center;
     margin-bottom: 100px;
-}
 
+    a {
+        font-size: 1.2em;
+    }
+}
 
 .accordion-button {
     background-color: $main_color !important;
@@ -16,18 +19,16 @@
     margin-bottom: 0.5rem;
 }
 
-
-
-.accordion-body{
+.accordion-body {
     padding: 0;
 }
 
-
-
-
+.w-90 {
+    width: 90%;
+}
 
 .barre-recherche {
-    background-color: #0041AA;
+    background-color: #0041aa;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -36,12 +37,11 @@
     color: white;
     font-size: 1.5rem;
     font-weight: 600;
-
 }
 
-nav>ul{
+nav.activites > ul {
     display: none;
-    background-color: #0041AA;
+    background-color: #0041aa;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -52,8 +52,10 @@ nav>ul{
     font-size: 1.5rem;
     font-weight: 600;
 }
-.r1, .r2, .r3{
-    background-color: #0041AA;
+.r1,
+.r2,
+.r3 {
+    background-color: #0041aa;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -64,77 +66,84 @@ nav>ul{
     font-weight: 600;
 }
 
-.ligne-rechercher{
-
+.ligne-rechercher {
     border-top: 6px solid white;
     width: 100%;
-
 }
-
+article.activite {
+    padding: 1em;
+}
 .r3 .fa-arrow-up {
-    color:white;
+    color: white;
     float: right;
     text-shadow: none;
-    font-size:1.5rem;
+    font-size: 1.5rem;
 }
 
 .photo-jpo {
     width: 100%;
-    border-radius: 70px;
+    // width: 30%;
+    border-radius: 20px;
+    // float: left;
+}
+.texte-activite {
+    margin-left: 4em;
+}
+@media (max-width: 720px) {
+    .photo-jpo {
+        border-radius: 0;
+    }
 
+    .texte-activite {
+        // padding: 0 2em;
+    }
 }
 
 .photo-activite {
     position: relative;
-    padding-top: 3rem;
+    // padding-top: 3rem;
     padding-bottom: 3rem;
 }
 
 .photo-activite h3 {
-    color: #0041AA;
+    color: $main_color;
     text-shadow: 6px 6px 6px red;
     font-size: 3.75rem;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     position: absolute;
-    top: 8rem;
-    left: 8rem;
-
+    top: 6rem;
+    left: 4rem;
 }
-
 
 .en-tete {
     display: flex;
     justify-content: space-between;
-    font-family: 'Montesserat', sans-serif;
-    font-size: 1.563rem;
+    font-family: "Montesserat", sans-serif;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #0041AA;
-
+    color: #0041aa;
 }
 
 .contenu-activite {
-    color: #0041AA;
-    font-family: 'Montesserat', sans-serif;
-    font-size: 1.563rem;
+    color: #0041aa;
+    font-family: "Montesserat", sans-serif;
+    font-size: 1.2rem;
     font-weight: 500;
     text-align: left;
-
 }
 
 .ligne {
-
-    border-top: 6px solid #0041AA;
+    border-top: 6px solid #0041aa;
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 .fa-arrow-up {
-    color: #0041AA;
+    color: #0041aa;
     font-size: 2.813rem;
     text-shadow: 6px 6px 6px red;
     font-weight: 700;
-    float: right;
-
+    // float: right;
 }

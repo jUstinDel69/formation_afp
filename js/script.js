@@ -20,11 +20,31 @@ function select_formation(id) {
 // Ouvre l'onglet info de la formation
 function open_infos_formation() {
     document.getElementById('info_formation').classList.add('anim_open_infos_formation');
-    window.scrollTo(0, 2000);
+    // window.scrollTo(0, 2000);
 }
 
 // Ferme l'onglet info de la formation
 function close_infos_formations() {
     document.getElementById('info_formation').classList.remove('anim_open_infos_formation');
     document.getElementById('info_formation').classList.remove('anim_close_infos_formation');
+
+    setTimeout(function(){
+        document.getElementById('open').classList.remove('anim_button_open');
+        document.getElementById(formation_selected).classList.remove('miniature_grande');
+    },3000);
+}
+
+
+function open_menu() {
+    document.getElementById('menu').classList.add('mobil_menu');
+}
+
+function close_menu() {
+    document.getElementById('menu').classList.remove('mobil_menu');
+}
+
+
+//Paralax
+window.onscroll = function (e) {
+    document.getElementById('header').style.backgroundPositionY = 50 + (window.scrollY/13) + '%';
 }
